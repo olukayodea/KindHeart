@@ -156,9 +156,15 @@ class mainKibdHeart {
     }
 
     public static function kh_deactivate() {
+        $planningCommittee  = new planningCommittee;
+        $benefitiary        = new benefitiary;
+        $volunteer          = new volunteer;
         // remove the admin roles
         self::remove_cap();
         self::remove_role();
+        $planningCommittee->delete_table();
+        $benefitiary->delete_table();
+        $volunteer->delete_table();
     }
 
     public static function kh_uninstall() {

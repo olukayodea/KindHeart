@@ -23,7 +23,7 @@ class planningCommittee extends commonMethods {
 
         $add = self::create($parameters);
         if ($add) {
-            self::$successResponse['additional_message'] = "Benefitiary saved successfully";
+            self::$successResponse['additional_message'] = "planning Committee saved successfully";
             self::$return = self::$successResponse;
             self::$return['ID'] = $add;
         } else {
@@ -55,35 +55,35 @@ class planningCommittee extends commonMethods {
     }
 
     static function create($array) {
-        return self::insert(kh_table_prefix."benefitiary", $array);
+        return self::insert(kh_table_prefix."planningCommittee", $array);
     }
 
     static function modifyOne($tag, $value, $id, $ref="ref") {
-        return self::updateOne(kh_table_prefix."benefitiary", $tag, $value, $id, $ref);
+        return self::updateOne(kh_table_prefix."planningCommittee", $tag, $value, $id, $ref);
     }
     
     static function getList($start=false, $limit=false, $order="ref", $dir="DESC", $type="list") {
-        return self::lists(kh_table_prefix."benefitiary", $start, $limit, $order, $dir, false, $type);
+        return self::lists(kh_table_prefix."planningCommittee", $start, $limit, $order, $dir, false, $type);
     }
 
     static function getSingle($name, $tag="patient_id", $ref="ref") {
-        return self::getOneField(kh_table_prefix."benefitiary", $name, $ref, $tag);
+        return self::getOneField(kh_table_prefix."planningCommittee", $name, $ref, $tag);
     }
 
     static function listOne($id) {
-        return self::getOne(kh_table_prefix."benefitiary", $id, "ref");
+        return self::getOne(kh_table_prefix."planningCommittee", $id, "ref");
     }
 
     static function getSortedList($id, $tag, $tag2 = false, $id2 = false, $tag3 = false, $id3 = false, $order = 'ref', $dir = "ASC", $logic = "AND", $start = false, $limit = false) {
-        return self::sortAll(kh_table_prefix."benefitiary", $id, $tag, $tag2, $id2, $tag3, $id3, $order, $dir, $logic, $start, $limit);
+        return self::sortAll(kh_table_prefix."planningCommittee", $id, $tag, $tag2, $id2, $tag3, $id3, $order, $dir, $logic, $start, $limit);
     }
 
     public function initialize_table() {
         //create database
-        $query = "CREATE TABLE IF NOT EXISTS `".DB_NAME."`.`".kh_table_prefix."benefitiary` (
+        $query = "CREATE TABLE IF NOT EXISTS `".DB_NAME."`.`".kh_table_prefix."planningCommittee` (
             `ref` INT NOT NULL AUTO_INCREMENT, 
-            `email` varchar(10) NULL,
-            `full_name` varchar(10) NULL,
+            `email` varchar(255) NULL,
+            `full_name` varchar(255) NULL,
             `phone` varchar(50) NULL, 
             `sex` varchar(10) NULL,
             `dob` varchar(10) NULL,
@@ -102,14 +102,14 @@ class planningCommittee extends commonMethods {
 
     public function clear_table() {
         //clear database
-        $query = "TRUNCATE `".DB_NAME."`.`".table_name_prefix."clinic_medication`";
+        $query = "TRUNCATE `".DB_NAME."`.`".kh_table_prefix."planningCommittee`";
 
         $this->query($query);
     }
 
     public function delete_table() {
         //clear database
-        $query = "DROP TABLE IF EXISTS `".DB_NAME."`.`".table_name_prefix."clinic_medication`";
+        $query = "DROP TABLE IF EXISTS `".DB_NAME."`.`".kh_table_prefix."planningCommittee`";
 
         $this->query($query);
     }

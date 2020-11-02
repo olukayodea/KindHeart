@@ -82,8 +82,8 @@ class volunteer extends commonMethods {
         //create database
         $query = "CREATE TABLE IF NOT EXISTS `".DB_NAME."`.`".kh_table_prefix."volunteer` (
             `ref` INT NOT NULL AUTO_INCREMENT, 
-            `email` varchar(10) NULL,
-            `full_name` varchar(10) NULL,
+            `email` varchar(255) NULL,
+            `full_name` varchar(255) NULL,
             `phone` varchar(50) NULL, 
             `sex` varchar(10) NULL,
             `dob` varchar(10) NULL,
@@ -112,14 +112,14 @@ class volunteer extends commonMethods {
 
     public function clear_table() {
         //clear database
-        $query = "TRUNCATE `".DB_NAME."`.`".table_name_prefix."volunteer`";
+        $query = "TRUNCATE `".DB_NAME."`.`".kh_table_prefix."volunteer`";
 
         $this->query($query);
     }
 
     public function delete_table() {
         //clear database
-        $query = "DROP TABLE IF EXISTS `".DB_NAME."`.`".table_name_prefix."volunteer`";
+        $query = "DROP TABLE IF EXISTS `".DB_NAME."`.`".kh_table_prefix."volunteer`";
 
         $this->query($query);
     }

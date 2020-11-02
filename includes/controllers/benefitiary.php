@@ -82,8 +82,8 @@ class benefitiary extends commonMethods {
         //create database
         $query = "CREATE TABLE IF NOT EXISTS `".DB_NAME."`.`".kh_table_prefix."benefitiary` (
             `ref` INT NOT NULL AUTO_INCREMENT, 
-            `full_name` varchar(10) NULL,
-            `email` varchar(10) NULL,
+            `email` varchar(255) NULL,
+            `full_name` varchar(255) NULL,
             `sex` varchar(10) NULL,
             `dob` varchar(10) NULL,
             `phone` varchar(50) NULL, 
@@ -106,14 +106,14 @@ class benefitiary extends commonMethods {
 
     public function clear_table() {
         //clear database
-        $query = "TRUNCATE `".DB_NAME."`.`".table_name_prefix."benefitiary`";
+        $query = "TRUNCATE `".DB_NAME."`.`".kh_table_prefix."benefitiary`";
 
         $this->query($query);
     }
 
     public function delete_table() {
         //clear database
-        $query = "DROP TABLE IF EXISTS `".DB_NAME."`.`".table_name_prefix."benefitiary`";
+        $query = "DROP TABLE IF EXISTS `".DB_NAME."`.`".kh_table_prefix."benefitiary`";
 
         $this->query($query);
     }
