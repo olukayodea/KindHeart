@@ -1,5 +1,5 @@
 <?php
-class commonMethods {
+class commonMethods extends database {
     public static function validateSession($request) {
         return users::getDetails($request);
     }
