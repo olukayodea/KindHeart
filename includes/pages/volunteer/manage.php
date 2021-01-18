@@ -14,7 +14,9 @@ $data = self::$viewData; ?>
     <div id="col-left">
       <div class="col-wrap">
         <div class="form-wrap">
-          <?php if (isset($_REQUEST['edit'])) { ?>
+          <?php if (isset($_REQUEST['open'])) { ?>
+              <h2><?php echo "View ".$data['full_name']."'s Record"; ?></h2>
+          <?php } elseif (isset($_REQUEST['edit'])) { ?>
               <h2><?php echo "Modify ".$data['full_name']."'s Record"; ?></h2>
           <?php } else { ?>
               <h2>Add New Volunteer</h2>

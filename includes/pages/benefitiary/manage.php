@@ -14,7 +14,9 @@ $data = self::$viewData; ?>
     <div id="col-left">
       <div class="col-wrap">
         <div class="form-wrap">
-          <?php if (isset($_REQUEST['edit'])) { ?>
+          <?php if (isset($_REQUEST['open'])) { ?>
+              <h2><?php echo "View ".$data['full_name']."'s Record"; ?></h2>
+          <?php } else if (isset($_REQUEST['edit'])) { ?>
               <h2><?php echo "Modify ".$data['full_name']."'s Record"; ?></h2>
           <?php } else { ?>
               <h2>Add New Benefitiary</h2>
@@ -149,8 +151,8 @@ $data = self::$viewData; ?>
               <td class="column-columnname"><?php echo $list[$i]['sex']; ?></td>
               <td class="column-columnname"><?php echo $list[$i]['dob']; ?></td>
               <td class="column-columnname">
-                <a href="<?php echo admin_url('admin.php?page=kh-manage-volunteer&open&id='.$list[$i]['ref']); ?>" title="View Record">View Record</a>&nbsp;
-                <a href="<?php echo admin_url('admin.php?page=kh-manage-volunteer&edit&id='.$list[$i]['ref']); ?>" title="Edit <?php echo $list[$i]['full_name']; ?>">Edit</a>
+                <a href="<?php echo admin_url('admin.php?page=kh-manage-benefitiary&open&id='.$list[$i]['ref']); ?>" title="View Record">View Record</a>&nbsp;
+                <a href="<?php echo admin_url('admin.php?page=kh-manage-benefitiary&edit&id='.$list[$i]['ref']); ?>" title="Edit <?php echo $list[$i]['full_name']; ?>">Edit</a>
               </td>
             </tr>
             <?php $count++;
