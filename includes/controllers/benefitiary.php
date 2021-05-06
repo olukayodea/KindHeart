@@ -40,7 +40,7 @@ class benefitiary extends commonMethods {
                 $id = $_REQUEST['id'];
                 self::$viewData = self::listOne($id);
             }
-        } else if ($_POST['submit']) {
+        } else if (isset($_POST['submit'])) {
             unset($_POST['submit']);
             $add = self::create($_POST);
             if ($add) {

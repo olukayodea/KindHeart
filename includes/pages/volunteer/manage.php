@@ -49,7 +49,7 @@ $data = self::$viewData; ?>
                 <p><strong>Date Last Modified</strong><br><?php echo $data['modify_time']; ?></p>
                 <p><a href="<?php echo admin_url('admin.php?page=kh-manage-volunteer&edit&id='.$data['ref']); ?>" title="Edit Record"><i class="far fa-edit"></i>&nbsp;Edit</a></p>
             <?php } else { ?>
-                <form id="form2" name="form2" method="post" action="<?php echo admin_url('admin.php?page=lh-manage-patient'); ?>">
+                <form id="form2" name="form2" method="post" action="<?php echo admin_url('admin.php?page=kh-manage-volunteer'); ?>">
                     <div class="form-field form-required term-full_name-wrap">
                         <label for="full_name"> Full Name</label>
                         <input type="text" name="full_name" id="full_name" value="<?php echo $data['full_name']; ?>" required />
