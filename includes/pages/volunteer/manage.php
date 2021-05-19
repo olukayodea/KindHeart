@@ -135,8 +135,8 @@ $data = self::$viewData; ?>
                         <textarea name="previous_volunteer_not_enjoy" id="previous_volunteer_not_enjoy" required><?php echo $data['previous_volunteer_not_enjoy']; ?></textarea>
                     </div>
                     <div class="form-field form-required term-languages-wrap">
-                        <label for="languages"> Specify the languages you speak</label>
-                        <textarea name="languages" id="languages" required><?php echo $data['languages']; ?></textarea>
+                        <label for="language"> Specify the languages you speak</label>
+                        <textarea name="language" id="language" required><?php echo $data['language']; ?></textarea>
                     </div>
                     <div class="form-field form-required term-communication_channel-wrap">
                         <label for="communication_channel"> What communication channels do you prefer</label>
