@@ -26,9 +26,11 @@ class volunteer extends commonMethods {
             self::$successResponse['additional_message'] = "volunteer saved successfully";
             self::$return = self::$successResponse;
             self::$return['ID'] = $add;
+            error_log("The Volunteer API was successful");
         } else {
             self::$BadReques['additional_message'] = "there was an error performing this action";
             self::$return = self::$BadReques;
+            error_log("The Volunteer API was not successful");
         }
 
         return self::$return;
