@@ -57,7 +57,7 @@ class volunteer extends commonMethods {
     }
 
     static function create($array) {
-        return self::insert(kh_table_prefix."volunteer", $array);
+        self::insert(kh_table_prefix."volunteer", $array);
     }
 
     static function modifyOne($tag, $value, $id, $ref="ref") {

@@ -94,6 +94,7 @@ class planningCommittee extends commonMethods {
             `occupation` varchar(255) NULL,
             `employer` varchar(50) NULL,
             `expectations` text NULL,
+            `unit` varchar(50) NULL,
             `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
             `modify_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
             PRIMARY KEY (`ref`)
